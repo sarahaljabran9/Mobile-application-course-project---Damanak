@@ -1,125 +1,38 @@
-# Mobile-application-course-project---Damanak
-# Damanak (ضمانك) — Receipt & Warranty Keeper
-
-A mobile application that helps users organize product warranties, store digital receipts, track warranty expiry dates, and receive reminders before coverage ends. The app supports local storage for offline access and cloud synchronization to help preserve warranty records across devices.
-
-**CSC 402 — Mobile Application Programming · Term Project · Group [XX]**
-Imam Abdulrahman Bin Faisal University · College of Computer Science and Information Technology
-
----
-
-## The problem
-
-Warranties are often proven by paper receipts. Thermal receipts fade, receipts get lost, and users may forget when their warranty coverage ends. As a result, repairs that should be covered may become paid repairs.
-
-Existing warranty apps are English-only, require an account, and upload receipt images — which contain purchase and payment details — to third-party servers.
-
-## The solution
-
-Damanak provides a digital record of product warranties and receipts. It calculates warranty expiry dates, displays each product’s status, and sends reminders before coverage ends. Local storage supports offline access, while cloud synchronization helps preserve records across devices.
-
----
-
-## Features
-
-| Feature | Priority |
-| --- | --- |
-| Add a product and capture its receipt with the camera | Must |
-| Automatic warranty status (active / expiring soon / expired) | Must |
-| Tiered notifications at 30, 7, and 1 day before expiry | Must |
-| Home screen ordered by nearest expiry, with status indicators | Must |
-| Product details with a full-screen zoomable receipt viewer | Must |
-| Service history log per product | Must |
-| Search, filter, and categories | Should |
-| Backup and restore | Should |
-| Receipt text extraction (OCR) | Could |
-
----
-
-## Tech stack
-
-- **Language:** Kotlin
-- **UI:** Jetpack Compose · Material 3
-- **Architecture:** MVVM with unidirectional data flow (UI → Domain → Data)
-- **Persistence:** Room
-- **Camera:** CameraX
-- **Background work:** WorkManager
-- **State:** ViewModel + StateFlow
-- **Navigation:** Navigation Compose
-
-**Minimum SDK:** 24 · **Target SDK:** 34
-
----
-
-## Project structure
-
-```
-app/src/main/java/.../damanak/
-├── data/          # Room entities, DAOs, repositories
-├── domain/        # models and warranty logic
-├── ui/
-│   ├── home/      # product list
-│   ├── detail/    # product details and service history
-│   ├── addedit/   # add and edit forms
-│   ├── search/    # search and filtering
-│   └── theme/     # shared design system
-├── work/          # WorkManager checks and notifications
-└── util/
-```
-
----
-
-## Getting started
-
-```bash
-git clone https://github.com/[org]/[repo].git
-```
-
-1. Open the project in Android Studio (Ladybug or newer).
-2. Let Gradle sync finish.
-3. Run on an emulator or device with API 24+.
-
-Grant the camera and notification permissions when prompted — receipt capture and expiry reminders depend on them.
-
----
-
-## Team
-
-| # | Name | Role |
-| --- | --- | --- |
-| 1 | | Team Lead & Data — repository, project board, Room and DAOs |
-| 2 | | Media — CameraX capture, image storage, receipt viewer |
-| 3 | | Warranty Logic — expiry calculation, WorkManager, notifications |
-| 4 | | UI — home screen, product list, design system |
-| 5 | | Forms & Search — add/edit, validation, categories, filtering |
-| 6 | | QA & Documentation — details, service history, tests, docs |
-
-Individual contribution is tracked through commit history, pull requests, and assigned issues.
-
----
-
-## Milestones
-
-| Milestone | Focus | Target |
-| --- | --- | --- |
-| M1 | Team formation & proposal | Week 3 |
-| M2 | UI/UX design & architecture | Week 6 |
-| M3 | Core development sprint | Week 9 |
-| M4 | Feature completion — beta build | Week 12 |
-| M5 | Testing, polish & documentation | Week 14 |
-| Final | Submission & presentation | Weeks 15–16 |
-
----
-
-## Contributing
-
-- One branch per feature: `feature/<short-name>`
-- Every task starts as a GitHub issue assigned to a named member
-- Pull requests need one review before merging into `main`
-- Commit messages follow `type: short description` (`feat:`, `fix:`, `docs:`, `test:`)
-
----
-
-## License
-
-Coursework submission for CSC 402. Not licensed for reuse.
+Damanak (ضمانك) — Receipt & Warranty Keeper
+An Android app that keeps household receipts and warranties in one place, syncs them to the user's account, and sends reminders before a warranty expires.
+CSC 402 — Mobile Application Programming · Term Project · Group 04 Imam Abdulrahman Bin Faisal University · College of Science and Humanities, Jubail
+The problem
+Warranties are often proven by paper receipts. Thermal receipts fade, receipts get lost, and users forget when their coverage ends. Repairs that should be covered end up being paid for.
+If the records live only on one phone, a lost, broken or reset phone erases every warranty with it.
+The solution
+Damanak keeps a digital record of every product, its receipt and its warranty. It calculates each expiry date, shows each product's status at a glance, and sends reminders before coverage ends. Data is saved on the device first, so the app works offline, and is synced to the user's account so the record survives a lost or new phone.
+Features
+Feature Priority
+Account and sync — sign up / sign in, records synced to the user's account Must
+Add a product and capture its receipt with the camera Must
+Automatic warranty status (active / expiring soon / expired) Must
+Reminders at 30, 7 and 1 day before expiry Must
+Home screen ordered by nearest expiry, with status indicators Must
+Product details with the receipt and a service history log Must
+Search, filter and categories Should
+Receipt text extraction (OCR) Could
+Tech stack
+Language: Kotlin
+UI: Jetpack Compose · Material 3
+Architecture: UI / Domain / Data layers with Unidirectional Data Flow
+Local storage: Room (single source of truth for the UI)
+Accounts and cloud sync: Firebase Authentication · Cloud Firestore · Firebase Storage
+Camera: CameraX
+Background work: WorkManager (sync and expiry reminders)
+State: ViewModel + StateFlow
+Navigation: Navigation Compose
+Minimum SDK: 24 · Target SDK: 34
+Design and architecture (Milestone 2)
+Clickable prototype: Figma (https://www.figma.com/design/YBJto06E71RQctkfAPajdx)
+Screens: docs/wireframes/
+Navigation map: docs/navigation-map.png
+Architecture diagram: docs/architecture.png · docs/architecture.md
+Style guide: docs/style-guide.md
+Jetpack components: docs/tech-stack.md
+AI use log: docs/ai-use-log.md
+Project structure
