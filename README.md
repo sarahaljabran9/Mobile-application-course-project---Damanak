@@ -1,22 +1,20 @@
 # Mobile-application-course-project---Damanak
 # Damanak (ضمانك) — Receipt & Warranty Keeper
 
-An offline Android app that keeps household receipts and warns you before a warranty expires.
+A mobile application that helps users organize product warranties, keep digital receipt records, track warranty expiry dates and receive reminders before coverage ends.
 
-**CSC 402 — Mobile Application Programming · Term Project · Group [XX]**
+**CSC 402 — Mobile Application Programming · Term Project · Group [4]**
 Imam Abdulrahman Bin Faisal University · College of Computer Science and Information Technology
 
 ---
 
 ## The problem
 
-Warranties are proven by paper receipts. Thermal receipts fade within months, receipts get scattered, and nothing warns the owner that coverage is about to end. A repair that should have been free becomes a paid one.
-
-Existing warranty apps are English-only, require an account, and upload receipt images — which contain purchase and payment details — to third-party servers.
+Warranties are often proven by paper receipts. Thermal receipts fade, receipts get lost and users may forget when their warranty coverage ends. As a result, repairs that should be covered may become paid repairs.
 
 ## The solution
 
-Damanak stores receipts and purchase data entirely on the device. It calculates each warranty's expiry date, shows every product's status at a glance, and sends notifications before coverage ends. No account, no server, no internet required.
+Damanak provides a digital record of product warranties and receipts. It calculates warranty expiry dates, displays each product’s status, and sends reminders before coverage ends. Local storage supports offline access, while cloud synchronization helps preserve records across devices.
 
 ---
 
